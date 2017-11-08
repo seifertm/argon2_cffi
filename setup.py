@@ -45,20 +45,20 @@ if windows:
 optimized = platform.machine() in ("i686", "x86", "x86_64", "AMD64")
 
 LIBRARIES = [
-    ("libargon2", {
-        "include_dirs": include_dirs,
-        "sources": [
-            os.path.join(lib_base, path)
-            for path in [
-                "argon2.c",
-                os.path.join("blake2", "blake2b.c"),
-                "core.c",
-                "encoding.c",
-                "opt.c" if optimized else "ref.c",
-                "thread.c",
-            ]
-        ],
-    }),
+#    ("libargon2", {
+#        "include_dirs": include_dirs,
+#        "sources": [
+#            os.path.join(lib_base, path)
+#            for path in [
+#                "argon2.c",
+#                os.path.join("blake2", "blake2b.c"),
+#                "core.c",
+#                "encoding.c",
+#                "opt.c" if optimized else "ref.c",
+#                "thread.c",
+#            ]
+#        ],
+#    }),
 ]
 META_PATH = os.path.join("src", "argon2", "__init__.py")
 KEYWORDS = ["password", "hash", "hashing", "security"]
