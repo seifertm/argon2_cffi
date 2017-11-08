@@ -6,7 +6,7 @@ import sys
 from cffi import FFI
 
 
-include_dirs = [os.path.join("extras", "libargon2", "include")]
+include_dirs = [os.path.join("/", "usr", "include")]
 
 # Add vendored integer types headers.
 if "win32" in str(sys.platform).lower():
@@ -26,7 +26,8 @@ ffi = FFI()
 ffi.set_source(
     "_ffi", "#include <argon2.h>",
     include_dirs=include_dirs,
-    libraries=["libargon2"],
+    libraries=["argon2"],
+    library_dirs=["/usr/lib"],
 )
 
 ffi.cdef("""\
